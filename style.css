@@ -1,0 +1,215 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+font-size:16px;
+}
+.container {
+    width: 100%;
+    height:100vh;
+
+}
+
+#app{
+min-width: 320px;
+max-width: 760px;
+height:100%;
+width: 70%;
+margin:0 auto;
+font-family:sans-serif;
+display:flex;
+flex-direction: column;
+justify-content: space-between;
+transition: all 1s ease;
+}
+
+header {
+width:100%;
+height: 25%;
+background-image: url(https://cdn.pixabay.com/photo/2016/03/24/13/45/coffee-1276784_960_720.jpg);
+background-size: cover;
+background-position:left top;
+position: relative;
+box-shadow: 0 3px 3px dimgrey;
+}
+
+
+#time-info{
+width: 65%;
+background-color: rgba(0, 0,  0, 0.5);
+left:1rem;
+top: 1rem;
+padding: 1rem;
+position: absolute;
+}
+#weekday{
+   text-transform: toUpperCase;
+}
+#time-info p{
+color: white;
+font-weight: bold;
+text-align: center;
+}
+#weekday{
+    font-size:1.5rem;
+    text-transform: capitalize;
+   
+}
+#today{
+    font-size: 1.5rem;
+}
+
+main{
+height: 60%;
+max-height:560px;
+}
+
+#list-wrap {
+width: 95%;
+height: 95%;
+background-color: honeydew;
+margin: 0.1rem auto;
+padding: 1rem;
+}
+#list {
+    width: 100%;
+}
+
+footer{
+
+    bottom: 0;
+    height: 15%;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: dimgrey;
+}
+#writeTask{
+height: 2rem;
+font-size: 1rem;
+outline:none;
+border:none;
+padding-left: 0.2rem;
+}
+.fa-plus-square {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 3px  rgb(202, 223, 202);
+}
+
+/**************  list  ***************/
+
+.taskText{
+    line-height: 1.5rem;
+  padding-left: 0.5rem;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+ 
+}
+.textWrap{
+display: inline;
+width:80%;
+ margin-right: 0.7rem;
+}
+ .task{
+list-style-type: none;
+display: flex;
+align-items: center;
+font-size: 1.3rem;
+margin-top: 0.5rem;
+padding: 0.5rem;
+position: relative;
+margin-top: 0.2rem;
+background-color: rgb(202, 223, 202);
+}
+.fa-trash-alt{
+    position: absolute;
+    right: 0.3rem;
+    padding: 0.5rem;
+}
+.fa-trash-alt:hover{
+    animation: trashMove 0.3s ease;  
+}
+.lineTrough{
+    text-decoration: line-through;
+}
+
+
+/************* Animation ****************/
+@keyframes trashMove{
+    0%{ right:0.3rem};
+    10%{right: 0.1rem}
+    20%{ right: 0.5rem}
+    30%{right: 0.1rem}
+    40%{ right: 0.5rem}
+    60%{right: 0.1rem};
+    80% {right: 0.5rem}
+    100%{right:0.3rem};
+}
+
+
+
+/************* Media quieries ****************/
+@media screen and (min-width: 370px) {
+    #app{
+        width: 100%;
+        }
+
+}
+
+@media screen and (min-width: 470px) {
+    #writeTask{
+        width: 25rem;
+        font-size: 1.3rem;
+     }  
+
+}
+@media screen and (min-width: 670px) {
+    #writeTask{
+        width: 35rem;
+        font-size: 1.5rem;
+     }  
+    .task{
+     height: 3rem;
+    }
+    .fa-plus-square {
+     font-size: 3rem;
+    } 
+
+}
+
+@media screen and (min-width: 750px) {
+    #app{
+        min-width: 768px;
+        max-width: 1024px;
+        }
+        .task{
+            font-size: 1.7rem;
+            height: 4.5rem;
+        }
+        .fa-trash-alt, .fa-check-circle, .fa-circle{
+            font-size: 2.5rem;
+        }
+        #weekday, #today{
+            font-size: 2.3rem;
+        }
+        .fa-plus-square {
+            font-size: 3.5rem;
+           } 
+       
+}
+@media screen and (min-width: 1170px){
+
+    #app{
+height:90%;
+    }
+}
+
+
+
